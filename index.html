@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+<style>
+        body{
+            text-align: center;
+            margin: 0px 2em;
+            font-family: arial;
+        }
+        
+        input{
+            display: none;
+        }
+
+        .tag{
+            font-size: 20px;
+            margin: 1.5em 0px;
+            padding: 5px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            cursor: pointer;
+            background: #efefef;
+            text-decoration: none;
+            color: black;
+            border: 1px solid #ccc;
+        }
+
+        img{
+            max-width: 300px;
+            width: 300px;
+            height: 300px;
+            transition: all .4s ease-in-out;
+        }
+        /*filter CSS */
+
+         #fish:checked ~ .images > img:not([class*='fish']),
+         #birds:checked ~ .images > img:not([class*='birds']),
+         #lion:checked ~ .images > img:not([class*='lion']){
+           width: 0px;
+           height: 0px;
+        }
+
+        #all:checked ~ .all,
+        #fish:checked ~ .tag1, 
+        #birds:checked ~ .tag2,
+        #lion:checked ~ .tag3{
+            background-color: #333333;      
+            color: white;
+        } 
+</style>
+</head>
+<body>
+ <h2>Filter the images</h2>
+
+            <input type="radio" id="all" name="button" checked>
+            <input type="radio" id="fish" name="button">
+            <input type="radio" id="birds" name="button">
+            <input type="radio" id="lion" name="button">
+            
+            <label class="tag all" for="all">all</label>
+            <label class="tag tag1" for="fish">fish</label>
+            <label class="tag tag2" for="birds">birds</label>
+            <label class="tag tag3" for="lion">lion</label>
+            <br>
+            <div class="images">
+ 
+                    <img src="https://images.unsplash.com/photo-1535077064341-36d7c7039479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1133&q=80"  class="lion">
+                    <img src="https://source.unsplash.com/BpH--upRlCs"  class="lion">
+                    <img src="https://source.unsplash.com/2vbhN2Yjb3A"  class="lion">
+                
+
+            
+                    <img src="https://source.unsplash.com/eqXiLNfZDc0"  class="birds">
+                    <img src="https://source.unsplash.com/7_TTPznVIQI"  class="birds">
+                
+
+            
+                    <img src="https://source.unsplash.com/YV593oyMKmo"  class="fish">
+                    <img src="https://source.unsplash.com/nI3bUW1Xqik"  class="fish">
+                    <img src="https://source.unsplash.com/qlnoAyck9Zc"  class="fish">
+                
+            </div>
+</body>
+</html>
